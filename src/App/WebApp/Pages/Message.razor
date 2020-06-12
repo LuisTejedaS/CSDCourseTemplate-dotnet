@@ -1,0 +1,20 @@
+@page "/message"
+@using AppCore;
+
+<h1>Mensajero</h1>
+<label>Nombre:</label>
+<input type="text" id="name" @bind="name" >
+
+<p id="salute" >Mensaje: @message</p>
+
+<button class="btn btn-primary" id="btnGetMessage" @onclick="GetMessage">Click me</button>
+
+@code {
+    private string message = "";
+    private string name = "";
+
+    private async Task GetMessage()
+    {
+        message = await new Messenger().GetMessage(name);
+    }
+}

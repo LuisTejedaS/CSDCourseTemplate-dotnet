@@ -20,6 +20,7 @@ namespace spec.StepDefinitions
         {
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl("http://google.com.mx");
+            driver.Close();
         }
     }
 }
